@@ -48,9 +48,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SolutionVersion.cs">
+    <!--<Compile Include="..\SolutionVersion.cs">
       <Link>SolutionVersion.cs</Link>
-    </Compile>
+    </Compile>-->
     <Compile Include="AsyncActivity_Specs.cs" />
     <Compile Include="AutomatonymousStateMachine_Specs.cs" />
     <Compile Include="Declarative_Specs.cs" />

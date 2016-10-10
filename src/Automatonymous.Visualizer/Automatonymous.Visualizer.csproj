@@ -55,9 +55,9 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SolutionVersion.cs">
+    <!--<Compile Include="..\SolutionVersion.cs">
       <Link>SolutionVersion.cs</Link>
-    </Compile>
+    </Compile>-->
     <Compile Include="StateMachineGraphGenerator.cs" />
   </ItemGroup>
   <ItemGroup>

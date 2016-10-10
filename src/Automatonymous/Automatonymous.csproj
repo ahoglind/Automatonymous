@@ -161,9 +161,9 @@
     <Compile Include="States\StateEventFilter.cs" />
     <Compile Include="Visitable.cs" />
     <Compile Include="Graphing\Vertex.cs" />
-    <Compile Include="..\SolutionVersion.cs">
+    <!--<Compile Include="..\SolutionVersion.cs">
       <Link>Properties\SolutionVersion.cs</Link>
-    </Compile>
+    </Compile>-->
     <Compile Include="States\StateMachineState.cs" />
     <Compile Include="ThenExtensions.cs" />
     <Compile Include="TransitionExtensions.cs" />
