@@ -45,13 +45,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    
-    <!--<Compile Include="..\SolutionVersion.cs">
-      <Link>Properties\SolutionVersion.cs</Link>
-    </Compile>-->
-    
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
     <!--<None Include="RaiseEventExtensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -61,7 +54,363 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\CompositeEventStatusAccessor.cs">
+      <Link>Accessors\CompositeEventStatusAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\DefaultInstanceStateAccessor.cs">
+      <Link>Accessors\DefaultInstanceStateAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\InitialIfNullStateAccessor.cs">
+      <Link>Accessors\InitialIfNullStateAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\IntCompositeEventStatusAccessor.cs">
+      <Link>Accessors\IntCompositeEventStatusAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\IntStateAccessor.cs">
+      <Link>Accessors\IntStateAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\RawStateAccessor.cs">
+      <Link>Accessors\RawStateAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\StateAccessorIndex.cs">
+      <Link>Accessors\StateAccessorIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\StringStateAccessor.cs">
+      <Link>Accessors\StringStateAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Accessors\StructCompositeEventStatusAccessor.cs">
+      <Link>Accessors\StructCompositeEventStatusAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\ActionActivity.cs">
+      <Link>Activities\ActionActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\AsyncActivity.cs">
+      <Link>Activities\AsyncActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\AsyncFactoryActivity.cs">
+      <Link>Activities\AsyncFactoryActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\CatchFaultActivity.cs">
+      <Link>Activities\CatchFaultActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\CompositeEventActivity.cs">
+      <Link>Activities\CompositeEventActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\ConditionalEventActivity.cs">
+      <Link>Activities\ConditionalEventActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\DataConverterActivity.cs">
+      <Link>Activities\DataConverterActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\ExceptionBehavior.cs">
+      <Link>Activities\ExceptionBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\ExecuteOnFaultedActivity.cs">
+      <Link>Activities\ExecuteOnFaultedActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\FactoryActivity.cs">
+      <Link>Activities\FactoryActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\FaultedActionActivity.cs">
+      <Link>Activities\FaultedActionActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\SlimActivity.cs">
+      <Link>Activities\SlimActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activities\TransitionActivity.cs">
+      <Link>Activities\TransitionActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Activity.cs">
+      <Link>Activity.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\AutomatonymousStateMachine.cs">
+      <Link>AutomatonymousStateMachine.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behavior.cs">
+      <Link>Behavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\BehaviorContext.cs">
+      <Link>BehaviorContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\BehaviorExceptionContext.cs">
+      <Link>BehaviorExceptionContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\ActivityBehavior.cs">
+      <Link>Behaviors\ActivityBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\ActivityBehaviorBuilder.cs">
+      <Link>Behaviors\ActivityBehaviorBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\BehaviorBuilder.cs">
+      <Link>Behaviors\BehaviorBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\CatchBehaviorBuilder.cs">
+      <Link>Behaviors\CatchBehaviorBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\DataBehavior.cs">
+      <Link>Behaviors\DataBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\EmptyBehavior.cs">
+      <Link>Behaviors\EmptyBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\ExceptionBehavior.cs">
+      <Link>Behaviors\ExceptionBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\ExceptionTypeCache.cs">
+      <Link>Behaviors\ExceptionTypeCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\LastBehavior.cs">
+      <Link>Behaviors\LastBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\LastFaultedBehavior.cs">
+      <Link>Behaviors\LastFaultedBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Behaviors\WidenBehavior.cs">
+      <Link>Behaviors\WidenBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\ActivityBinder.cs">
+      <Link>Binders\ActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\CatchActivityBinder.cs">
+      <Link>Binders\CatchActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\CatchExceptionActivityBinder.cs">
+      <Link>Binders\CatchExceptionActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\DataEventActivityBinder.cs">
+      <Link>Binders\DataEventActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\EventActivities.cs">
+      <Link>Binders\EventActivities.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\EventActivityBinder.cs">
+      <Link>Binders\EventActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\ExceptionActivityBinder.cs">
+      <Link>Binders\ExceptionActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\ExecuteActivityBinder.cs">
+      <Link>Binders\ExecuteActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\IgnoreEventActivityBinder.cs">
+      <Link>Binders\IgnoreEventActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Binders\TriggerEventActivityBinder.cs">
+      <Link>Binders\TriggerEventActivityBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\CompositeEventOptions.cs">
+      <Link>CompositeEventOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\CompositeEventStatus.cs">
+      <Link>CompositeEventStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Contexts\BehaviorContextProxy.cs">
+      <Link>Contexts\BehaviorContextProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Contexts\BehaviorExceptionContextProxy.cs">
+      <Link>Contexts\BehaviorExceptionContextProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Contexts\EventBehaviorContext.cs">
+      <Link>Contexts\EventBehaviorContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Contexts\EventContextProxy.cs">
+      <Link>Contexts\EventContextProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Contexts\PayloadCache.cs">
+      <Link>Contexts\PayloadCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Contexts\StateMachineEventContext.cs">
+      <Link>Contexts\StateMachineEventContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Contexts\StateMachineInstanceContext.cs">
+      <Link>Contexts\StateMachineInstanceContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Contexts\StateUnhandledEventContext.cs">
+      <Link>Contexts\StateUnhandledEventContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Event.cs">
+      <Link>Event.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\EventContext.cs">
+      <Link>EventContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\EventLift.cs">
+      <Link>EventLift.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\EventLiftExtensions.cs">
+      <Link>EventLiftExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\EventObserver.cs">
+      <Link>EventObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Events\DataEvent.cs">
+      <Link>Events\DataEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Events\StateMachineEvent.cs">
+      <Link>Events\StateMachineEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Events\TriggerEvent.cs">
+      <Link>Events\TriggerEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Exceptions\AutomatonymousException.cs">
+      <Link>Exceptions\AutomatonymousException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Exceptions\EventExecutionException.cs">
+      <Link>Exceptions\EventExecutionException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Exceptions\PayloadException.cs">
+      <Link>Exceptions\PayloadException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Exceptions\PayloadFactoryException.cs">
+      <Link>Exceptions\PayloadFactoryException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Exceptions\PayloadNotFoundException.cs">
+      <Link>Exceptions\PayloadNotFoundException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Exceptions\UnhandledEventException.cs">
+      <Link>Exceptions\UnhandledEventException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Exceptions\UnknownEventException.cs">
+      <Link>Exceptions\UnknownEventException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Exceptions\UnknownStateException.cs">
+      <Link>Exceptions\UnknownStateException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Graphing\Edge.cs">
+      <Link>Graphing\Edge.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Graphing\GraphStateMachineExtensions.cs">
+      <Link>Graphing\GraphStateMachineExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Graphing\GraphStateMachineVisitor.cs">
+      <Link>Graphing\GraphStateMachineVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Graphing\StateMachineGraph.cs">
+      <Link>Graphing\StateMachineGraph.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Graphing\Vertex.cs">
+      <Link>Graphing\Vertex.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\InstanceContext.cs">
+      <Link>InstanceContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\InstanceLift.cs">
+      <Link>InstanceLift.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\InstanceLiftExtensions.cs">
+      <Link>InstanceLiftExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Internals\Connectable.cs">
+      <Link>Internals\Connectable.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Internals\ExpressionExtensions.cs">
+      <Link>Internals\ExpressionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Internals\ReadOnlyProperty.cs">
+      <Link>Internals\ReadOnlyProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Internals\ReadWriteProperty.cs">
+      <Link>Internals\ReadWriteProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Internals\TaskUtil.cs">
+      <Link>Internals\TaskUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\IntrospectionExtensions.cs">
+      <Link>IntrospectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Lifts\StateMachineEventLift.cs">
+      <Link>Lifts\StateMachineEventLift.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Lifts\StateMachineInstanceLift.cs">
+      <Link>Lifts\StateMachineInstanceLift.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\ObserverExtensions.cs">
+      <Link>ObserverExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Observers\EventObservable.cs">
+      <Link>Observers\EventObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Observers\NonTransitionEventObserver.cs">
+      <Link>Observers\NonTransitionEventObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Observers\SelectedEventObserver.cs">
+      <Link>Observers\SelectedEventObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Observers\StateObservable.cs">
+      <Link>Observers\StateObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\PayloadFactory.cs">
+      <Link>PayloadFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\RaiseEventExtensions.cs">
+      <Link>RaiseEventExtensions.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RaiseEventExtensions.tt</DependentUpon>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\State.cs">
+      <Link>State.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\StateAccessor.cs">
+      <Link>StateAccessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\StateAccessorExtensions.cs">
+      <Link>StateAccessorExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\StateChanged.cs">
+      <Link>StateChanged.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\StateMachine.cs">
+      <Link>StateMachine.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\StateMachineEventFilter.cs">
+      <Link>StateMachineEventFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\StateMachineExtensions.cs">
+      <Link>StateMachineExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\StateMachineVisitor.cs">
+      <Link>StateMachineVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\StateObserver.cs">
+      <Link>StateObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\States\AllStateEventFilter.cs">
+      <Link>States\AllStateEventFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\States\SelectedStateEventFilter.cs">
+      <Link>States\SelectedStateEventFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\States\StateEventFilter.cs">
+      <Link>States\StateEventFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\States\StateMachineState.cs">
+      <Link>States\StateMachineState.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\ThenExtensions.cs">
+      <Link>ThenExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\TransitionExtensions.cs">
+      <Link>TransitionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\UnhandledEventCallback.cs">
+      <Link>UnhandledEventCallback.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\UnhandledEventContext.cs">
+      <Link>UnhandledEventContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Netstandard\Visitable.cs">
+      <Link>Visitable.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Automatonymous.Netstandard\RaiseEventExtensions.tt">
+      <Link>RaiseEventExtensions.tt</Link>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RaiseEventExtensions.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

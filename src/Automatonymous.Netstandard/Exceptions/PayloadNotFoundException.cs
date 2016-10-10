@@ -1,6 +1,8 @@
 namespace Automatonymous
 {
+#if NETSTANDARD
   using Newtonsoft.Json;
+#endif
   using System;
   using System.Runtime.Serialization;
 
