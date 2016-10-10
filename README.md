@@ -9,4 +9,9 @@ This is an attempt to make this project to build both for netcore/netstandard an
 
 All files will be moved to netcore/netstandard projects and to be Linked As in the .Net 4.5.2 projects.
 
-No support for NHibernate will be done.
+No support for NHibernate will be done untill NHibernate is fully Netstandard compatible.
+
+Contact:
+Alexander Höglind
+
+alexander#AT#hoglind.me
