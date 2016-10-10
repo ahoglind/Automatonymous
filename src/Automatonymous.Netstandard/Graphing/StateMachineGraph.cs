@@ -12,12 +12,19 @@
 // specific language governing permissions and limitations under the License.
 namespace Automatonymous.Graphing
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+#if NETSTANDARD
+  using Newtonsoft.Json;
+#endif
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
 
 
-    [Serializable]
+#if NETSTANDARD
+  [JsonObject(MemberSerialization.OptIn)]
+#else
+  [Serializable]
+#endif
     public class StateMachineGraph
     {
         readonly Edge[] _edges;

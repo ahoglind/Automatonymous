@@ -12,14 +12,21 @@
 // specific language governing permissions and limitations under the License.
 namespace Automatonymous
 {
-    using System;
-    using System.ComponentModel;
-    using System.Diagnostics;
-    using System.Linq;
+#if NETSTANDARD
+  using Newtonsoft.Json;
+#endif
+  using System;
+  using System.ComponentModel;
+  using System.Diagnostics;
+  using System.Linq;
 
 
-    [Serializable]
-    [DebuggerDisplay("{Status}")]
+#if NETSTANDARD
+  [JsonObject(MemberSerialization.OptIn)]
+#else
+  [Serializable]
+#endif
+  [DebuggerDisplay("{Status}")]
     public struct CompositeEventStatus :
         IComparable<CompositeEventStatus>
     {

@@ -15,10 +15,12 @@ namespace Automatonymous.Tests
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
-    using Newtonsoft.Json;
+#if NETSTANDARD
+  using Newtonsoft.Json;
+#endif
 
 
-    public class JsonStateSerializer<TStateMachine, TInstance>
+  public class JsonStateSerializer<TStateMachine, TInstance>
         where TStateMachine : StateMachine<TInstance>
         where TInstance : class
     {

@@ -12,10 +12,17 @@
 // specific language governing permissions and limitations under the License.
 namespace Automatonymous.Graphing
 {
-    using System;
+#if NETSTANDARD
+  using Newtonsoft.Json;
+#endif
+  using System;
 
 
-    [Serializable]
+#if NETSTANDARD
+  [JsonObject(MemberSerialization.OptIn)]
+#else
+  [Serializable]
+#endif
     public class Edge : 
         IEquatable<Edge>
     {

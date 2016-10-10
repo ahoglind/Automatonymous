@@ -12,11 +12,18 @@
 // specific language governing permissions and limitations under the License.
 namespace Automatonymous
 {
-    using System;
-    using System.Runtime.Serialization;
+#if NETSTANDARD
+  using Newtonsoft.Json;
+#endif
+  using System;
+  using System.Runtime.Serialization;
 
 
-    [Serializable]
+#if NETSTANDARD
+  [JsonObject(MemberSerialization.OptIn)]
+#else
+  [Serializable]
+#endif
     public class UnknownStateException :
         AutomatonymousException
     {
@@ -28,10 +35,11 @@ namespace Automatonymous
             : base($"The {stateName} state is not defined for the {machineType} state machine")
         {
         }
-
+#if !NETSTANDARD
         protected UnknownStateException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
     }
 }

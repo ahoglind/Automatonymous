@@ -12,11 +12,18 @@
 // specific language governing permissions and limitations under the License.
 namespace Automatonymous
 {
-    using System;
-    using System.Runtime.Serialization;
+#if NETSTANDARD
+  using Newtonsoft.Json;
+#endif
+  using System;
+  using System.Runtime.Serialization;
 
 
-    [Serializable]
+  #if NETSTANDARD
+  [JsonObject(MemberSerialization.OptIn)]
+#else
+  [Serializable]
+#endif
     public class AutomatonymousException :
         Exception
     {
@@ -43,10 +50,11 @@ namespace Automatonymous
             : base($"{machineType.Name}: {message}", innerException)
         {
         }
-
-        protected AutomatonymousException(SerializationInfo info, StreamingContext context)
+#if !NETSTANDARD
+    protected AutomatonymousException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
     }
 }

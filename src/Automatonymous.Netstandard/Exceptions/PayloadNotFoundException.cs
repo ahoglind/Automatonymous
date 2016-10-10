@@ -1,10 +1,15 @@
 namespace Automatonymous
 {
-    using System;
-    using System.Runtime.Serialization;
+  using Newtonsoft.Json;
+  using System;
+  using System.Runtime.Serialization;
 
 
-    [Serializable]
+#if NETSTANDARD
+  [JsonObject(MemberSerialization.OptIn)]
+#else
+  [Serializable]
+#endif
     public class PayloadNotFoundException :
         PayloadException
     {
@@ -21,10 +26,11 @@ namespace Automatonymous
             : base(message, innerException)
         {
         }
-
+#if !NETSTANDARD
         protected PayloadNotFoundException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
     }
 }

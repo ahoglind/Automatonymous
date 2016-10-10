@@ -1,10 +1,17 @@
 namespace Automatonymous
 {
-    using System;
-    using System.Runtime.Serialization;
+#if NETSTANDARD
+  using Newtonsoft.Json;
+#endif
+  using System;
+  using System.Runtime.Serialization;
 
 
-    [Serializable]
+#if NETSTANDARD
+  [JsonObject(MemberSerialization.OptIn)]
+#else
+  [Serializable]
+#endif
     public class PayloadFactoryException :
         PayloadException
     {
@@ -21,10 +28,11 @@ namespace Automatonymous
             : base(message, innerException)
         {
         }
-
+#if !NETSTANDARD
         protected PayloadFactoryException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
     }
 }

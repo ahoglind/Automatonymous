@@ -14,10 +14,12 @@ namespace Automatonymous.Tests
 {
     using System;
     using System.Globalization;
-    using Newtonsoft.Json;
+#if NETSTANDARD
+  using Newtonsoft.Json;
+#endif
 
 
-    public class StateConverter<T> :
+  public class StateConverter<T> :
         JsonConverter
         where T : StateMachine
     {
