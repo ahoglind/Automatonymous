@@ -13,4 +13,5 @@ No support for NHibernate will be done untill NHibernate is fully Netstandard co
 
 Contact:
 Alexander Höglind
-alexander*AT*hoglind.me
+
+alexander#AT#hoglind.me
