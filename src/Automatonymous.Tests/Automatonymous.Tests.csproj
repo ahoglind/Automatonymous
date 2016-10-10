@@ -51,36 +51,6 @@
     <!--<Compile Include="..\SolutionVersion.cs">
       <Link>SolutionVersion.cs</Link>
     </Compile>-->
-    <Compile Include="AsyncActivity_Specs.cs" />
-    <Compile Include="AutomatonymousStateMachine_Specs.cs" />
-    <Compile Include="Declarative_Specs.cs" />
-    <Compile Include="EventObservable_Specs.cs" />
-    <Compile Include="EventLift_Specs.cs" />
-    <Compile Include="Activity_Specs.cs" />
-    <Compile Include="Anytime_Specs.cs" />
-    <Compile Include="Combine_Specs.cs" />
-    <Compile Include="DataActivity_Specs.cs" />
-    <Compile Include="Dependency_Specs.cs" />
-    <Compile Include="EventRaisedObserver.cs" />
-    <Compile Include="Event_Specs.cs" />
-    <Compile Include="Exception_Specs.cs" />
-    <Compile Include="Group_Specs.cs" />
-    <Compile Include="InstanceLift_Specs.cs" />
-    <Compile Include="Introspection_Specs.cs" />
-    <Compile Include="JsonStateSerializer.cs" />
-    <Compile Include="Observable_Specs.cs" />
-    <Compile Include="AnyStateTransition_Specs.cs" />
-    <Compile Include="RaiseEvent_Specs.cs" />
-    <Compile Include="Request_Specs.cs" />
-    <Compile Include="SerializeState_Specs.cs" />
-    <Compile Include="StateChangeObserver.cs" />
-    <Compile Include="StateConverter.cs" />
-    <Compile Include="State_Specs.cs" />
-    <Compile Include="Telephone_Sample.cs" />
-    <Compile Include="Transition_Specs.cs" />
-    <Compile Include="UnobservedEvent_Specs.cs" />
-    <Compile Include="Visualizer_Specs.cs" />
-    <Compile Include="FilterExpression_Specs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Automatonymous.Visualizer\Automatonymous.Visualizer.csproj">
