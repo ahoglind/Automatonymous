@@ -7,7 +7,7 @@ Be sure to [Read the Docs](http://automatonymous.readthedocs.org/en/latest/confi
 
 This is an attempt to make this project to build NETStandard and for .Net 4.5.2.
 
-The Test Project is using NetCoreApp.
+The new Test Project is using NetCoreApp.
 
 All files will be moved to netcore/netstandard projects and to be Added As Links in the .Net 4.5.2 projects.
 
