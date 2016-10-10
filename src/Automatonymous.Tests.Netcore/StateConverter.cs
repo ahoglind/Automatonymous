@@ -14,7 +14,7 @@ namespace Automatonymous.Tests
 {
     using System;
     using System.Globalization;
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
   using Newtonsoft.Json;
 #endif
 

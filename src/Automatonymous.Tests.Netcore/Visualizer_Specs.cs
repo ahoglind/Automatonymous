@@ -12,7 +12,8 @@
 // specific language governing permissions and limitations under the License.
 namespace Automatonymous.Tests
 {
-    using System;
+#if !NETSTANDARD && !NETCORE
+  using System;
     using Graphing;
     using NUnit.Framework;
     using Visualizer;
@@ -128,4 +129,5 @@ namespace Automatonymous.Tests
             Assert.AreEqual(Expected, dots);
         }
     }
+#endif
 }
