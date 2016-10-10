@@ -15,7 +15,8 @@ namespace Automatonymous.Tests
     using System;
     using System.Globalization;
 #if NETSTANDARD || NETCORE
-  using Newtonsoft.Json;
+    using Newtonsoft.Json;
+    using System.Reflection;
 #endif
 
 
@@ -61,7 +62,11 @@ namespace Automatonymous.Tests
 
         public override bool CanConvert(Type objectType)
         {
+#if NETSTANDARD || NETCORE
+            return typeof(State).GetTypeInfo().IsSubclassOf(objectType);
+#else
             return typeof(State).IsAssignableFrom(objectType);
+#endif
         }
     }
 }
