@@ -5,7 +5,7 @@ Automatonymous is a most awesome state machine for .Net applications. It allows 
 Be sure to [Read the Docs](http://automatonymous.readthedocs.org/en/latest/configuration/quickstart.html)!
 
 
-This is an attempt to make this project to build both for netcore/netstandard and for .Net 4.5.3.
+This is an attempt to make this project to build both for netcore/netstandard and for .Net 4.5.2.
 
 All files will be moved to netcore/netstandard projects and to be Linked As in the .Net 4.5.2 projects.
 
