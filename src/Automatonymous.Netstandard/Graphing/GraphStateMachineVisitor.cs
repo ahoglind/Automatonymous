@@ -17,9 +17,12 @@ namespace Automatonymous.Graphing
     using System.Linq;
     using Activities;
     using Events;
+#if NETSTANDARD
+  using System.Reflection;
+#endif
 
 
-    public class GraphStateMachineVisitor<TInstance> :
+  public class GraphStateMachineVisitor<TInstance> :
         StateMachineVisitor
         where TInstance : class
     {
@@ -122,13 +125,20 @@ namespace Automatonymous.Graphing
                 next(activity);
                 return;
             }
-
+#if NETSTANDARD
+            Type activityType = activity.GetType();
+            Type compensateType = activity.GetType().GetTypeInfo().ContainsGenericParameters && activityType.IsGenericParameter.GetType() == typeof(CatchFaultActivity<,>)
+                ? activityType.GetTypeInfo().GenericTypeParameters.Skip(1).First() != null ? activityType.GetTypeInfo().GenericTypeParameters.Skip(1).First().GetType() : null
+                 : null;
+#else
             Type activityType = activity.GetType();
             Type compensateType = activityType.IsGenericType && activityType.GetGenericTypeDefinition() == typeof(CatchFaultActivity<,>)
                 ? activityType.GetGenericArguments().Skip(1).First()
                 : null;
+#endif
 
-            if (compensateType != null)
+
+      if (compensateType != null)
             {
                 Vertex previousEvent = _currentEvent;
 
@@ -216,7 +226,19 @@ namespace Automatonymous.Graphing
 
         static Vertex CreateEventVertex(Event @event)
         {
-            Type targetType = @event
+#if NETSTANDARD
+          //TODO: Make sure this is correct behavior, same as for .Net
+          Type targetType = @event
+              .GetType()
+              .GetTypeInfo()
+              .GetInterfaces()
+              .Select(x => x.GetTypeInfo().GenericTypeArguments.Where(p => p.GetType().GetTypeInfo().IsGenericType && ( p.GetTypeInfo().GetGenericTypeDefinition() == typeof(Event<>) )))
+              .Select(y => y.Select(a => a.GenericTypeArguments[0]))
+              .Single()
+              .Single();
+
+#else
+             Type targetType = @event
                 .GetType()
                 .GetInterfaces()
                 .Where(x => x.IsGenericType)
@@ -224,8 +246,10 @@ namespace Automatonymous.Graphing
                 .Select(x => x.GetGenericArguments()[0])
                 .DefaultIfEmpty(typeof(Event))
                 .Single();
+#endif
 
-            return new Vertex(typeof(Event), targetType, @event.Name);
+
+      return new Vertex(typeof(Event), targetType, @event.Name);
         }
 
         static Vertex CreateEventVertex(Type exceptionType)

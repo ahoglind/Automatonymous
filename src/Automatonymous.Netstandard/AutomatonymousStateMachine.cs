@@ -297,7 +297,11 @@ namespace Automatonymous
                 eventProperty.SetValue(propertyValue, @event);
             else
             {
-                var objectProperty = propertyValue.GetType().GetProperty(eventProperty.Name, typeof(Event<T>));
+#if NETSTANDARD
+               var objectProperty = propertyValue.GetType().GetTypeInfo().GetProperty(eventProperty.Name, typeof(Event<T>));
+#else
+               var objectProperty = propertyValue.GetType().GetProperty(eventProperty.Name, typeof(Event<T>));
+#endif
                 if (objectProperty == null || !objectProperty.CanWrite)
                     throw new ArgumentException($"The event property is not writable: {eventProperty.Name}");
 
@@ -493,7 +497,12 @@ namespace Automatonymous
                 stateProperty.SetValue(propertyValue, state);
             else
             {
-                var objectProperty = propertyValue.GetType().GetProperty(stateProperty.Name, typeof(State));
+#if NETSTANDARD
+              var objectProperty = propertyValue.GetType().GetTypeInfo().GetProperty(stateProperty.Name, typeof(State));
+#else
+              var objectProperty = propertyValue.GetType().GetProperty(stateProperty.Name, typeof(State));
+#endif
+        
                 if (objectProperty == null || !objectProperty.CanWrite)
                     throw new ArgumentException($"The state property is not writable: {stateProperty.Name}");
 
@@ -506,8 +515,11 @@ namespace Automatonymous
         {
             if (stateProperty.CanRead)
                 return stateProperty.GetValue(propertyValue) as StateMachineState<TInstance>;
-
+#if NETSTANDARD
+            var objectProperty = propertyValue.GetType().GetTypeInfo().GetProperty(stateProperty.Name, typeof(State));
+#else
             var objectProperty = propertyValue.GetType().GetProperty(stateProperty.Name, typeof(State));
+#endif
             if (objectProperty == null || !objectProperty.CanRead)
                 throw new ArgumentException($"The state property is not readable: {stateProperty.Name}");
 
@@ -1009,12 +1021,21 @@ namespace Automatonymous
 
             foreach (PropertyInfo propertyInfo in properties)
             {
+#if NETSTANDARD
+                if (propertyInfo.PropertyType.GenericTypeArguments.Length > 0)
+#else
                 if (propertyInfo.PropertyType.IsGenericType)
+#endif
                 {
                     if (propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(Event<>))
                     {
+#if NETSTANDARD
+                        Type declarationType = typeof(DataEventRegistration<,>).MakeGenericType(typeof(TInstance), machineType,
+                           propertyInfo.PropertyType.GenericTypeArguments.First());
+#else
                         Type declarationType = typeof(DataEventRegistration<,>).MakeGenericType(typeof(TInstance), machineType,
                             propertyInfo.PropertyType.GetGenericArguments().First());
+#endif
                         object declaration = Activator.CreateInstance(declarationType, propertyInfo);
                         events.Add((StateMachineRegistration)declaration);
                     }

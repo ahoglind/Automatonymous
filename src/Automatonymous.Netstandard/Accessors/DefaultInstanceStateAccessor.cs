@@ -55,14 +55,27 @@ namespace Automatonymous.Accessors
 
         StateAccessor<TInstance> CreateDefaultAccessor()
         {
+
+#if NETSTANDARD
             List<PropertyInfo> states = typeof(TInstance)
+                .GetTypeInfo()
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
                 .Where(x => x.PropertyType == typeof(State))
                 .Where(x => x.GetGetMethod(true) != null)
                 .Where(x => x.GetSetMethod(true) != null)
                 .ToList();
+#else
+      
+          List<PropertyInfo> states = typeof(TInstance)
+                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(x => x.PropertyType == typeof(State))
+                .Where(x => x.GetGetMethod(true) != null)
+                .Where(x => x.GetSetMethod(true) != null)
+                .ToList();
+#endif
 
-            if (states.Count > 1)
+
+      if (states.Count > 1)
             {
                 throw new AutomatonymousException(
                     "The InstanceState was not configured, and could not be automatically identified as multiple State properties exist.");
