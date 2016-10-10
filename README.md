@@ -5,13 +5,15 @@ Automatonymous is a most awesome state machine for .Net applications. It allows 
 Be sure to [Read the Docs](http://automatonymous.readthedocs.org/en/latest/configuration/quickstart.html)!
 
 
-This is an attempt to make this project to build both for netcore/netstandard and for .Net 4.5.2.
+This is an attempt to make this project to build NETStandard and for .Net 4.5.2.
 
-All files will be moved to netcore/netstandard projects and to be Linked As in the .Net 4.5.2 projects.
+The Test Project is using NetCoreApp.
 
-No support for NHibernate will be done untill NHibernate is fully Netstandard compatible.
+All files will be moved to netcore/netstandard projects and to be Added As Links in the .Net 4.5.2 projects.
+
+No port attempt for NHibernate or Visualizer has been done.
 
 Contact:
 Alexander Höglind
 
-alexander#AT#hoglind.me
+alexander#AT#hoglind#DOT#me
