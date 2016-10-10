@@ -15,9 +15,9 @@ namespace Automatonymous.Tests
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
-#if NETSTANDARD || NETCORE
-  using Newtonsoft.Json;
-#endif
+
+    using Newtonsoft.Json;
+
 
 
   public class JsonStateSerializer<TStateMachine, TInstance>

@@ -51,6 +51,99 @@
     <!--<Compile Include="..\SolutionVersion.cs">
       <Link>SolutionVersion.cs</Link>
     </Compile>-->
+    <Compile Include="..\Automatonymous.Tests.Netcore\Activity_Specs.cs">
+      <Link>Activity_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\AnyStateTransition_Specs.cs">
+      <Link>AnyStateTransition_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Anytime_Specs.cs">
+      <Link>Anytime_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\ApplicationException.cs">
+      <Link>ApplicationException.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\AsyncActivity_Specs.cs">
+      <Link>AsyncActivity_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\AutomatonymousStateMachine_Specs.cs">
+      <Link>AutomatonymousStateMachine_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Combine_Specs.cs">
+      <Link>Combine_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\DataActivity_Specs.cs">
+      <Link>DataActivity_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Declarative_Specs.cs">
+      <Link>Declarative_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Dependency_Specs.cs">
+      <Link>Dependency_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\EventLift_Specs.cs">
+      <Link>EventLift_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\EventObservable_Specs.cs">
+      <Link>EventObservable_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\EventRaisedObserver.cs">
+      <Link>EventRaisedObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Event_Specs.cs">
+      <Link>Event_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Exception_Specs.cs">
+      <Link>Exception_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\FilterExpression_Specs.cs">
+      <Link>FilterExpression_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Group_Specs.cs">
+      <Link>Group_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\InstanceLift_Specs.cs">
+      <Link>InstanceLift_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Introspection_Specs.cs">
+      <Link>Introspection_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\JsonStateSerializer.cs">
+      <Link>JsonStateSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Observable_Specs.cs">
+      <Link>Observable_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\RaiseEvent_Specs.cs">
+      <Link>RaiseEvent_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Request_Specs.cs">
+      <Link>Request_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\SerializeState_Specs.cs">
+      <Link>SerializeState_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\StateChangeObserver.cs">
+      <Link>StateChangeObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\StateConverter.cs">
+      <Link>StateConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\State_Specs.cs">
+      <Link>State_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Telephone_Sample.cs">
+      <Link>Telephone_Sample.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Transition_Specs.cs">
+      <Link>Transition_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\UnobservedEvent_Specs.cs">
+      <Link>UnobservedEvent_Specs.cs</Link>
+    </Compile>
+    <Compile Include="..\Automatonymous.Tests.Netcore\Visualizer_Specs.cs">
+      <Link>Visualizer_Specs.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Automatonymous.Visualizer\Automatonymous.Visualizer.csproj">
