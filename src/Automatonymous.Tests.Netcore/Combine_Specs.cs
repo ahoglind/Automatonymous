@@ -13,13 +13,19 @@
 namespace Automatonymous.Tests
 {
     using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+    using System.Threading.Tasks;
+#endif
 
-
-    [TestFixture]
+  [TestFixture]
     public class When_combining_events_into_a_single_event
     {
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_have_called_combined_event()
+#else
         public async void Should_have_called_combined_event()
+#endif
         {
             _machine = new TestStateMachine();
             _instance = new Instance();
@@ -32,7 +38,11 @@ namespace Automatonymous.Tests
         }
 
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_not_call_for_one_event()
+#else
         public async void Should_not_call_for_one_event()
+#endif
         {
             _machine = new TestStateMachine();
             _instance = new Instance();
@@ -44,7 +54,11 @@ namespace Automatonymous.Tests
         }
 
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_not_call_for_one_other_event()
+#else
         public async void Should_not_call_for_one_other_event()
+#endif
         {
             _machine = new TestStateMachine();
             _instance = new Instance();
@@ -98,7 +112,11 @@ namespace Automatonymous.Tests
     public class When_combining_events_with_an_int_for_state
     {
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_have_called_combined_event()
+#else
         public async void Should_have_called_combined_event()
+#endif
         {
             _machine = new TestStateMachine();
             _instance = new Instance();
@@ -115,7 +133,11 @@ namespace Automatonymous.Tests
         }
 
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_not_call_for_one_event()
+#else
         public async void Should_not_call_for_one_event()
+#endif
         {
             _machine = new TestStateMachine();
             _instance = new Instance();
@@ -127,7 +149,11 @@ namespace Automatonymous.Tests
         }
 
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_have_initial_state_with_zero()
+#else
         public async void Should_have_initial_state_with_zero()
+#endif
         {
             _machine = new TestStateMachine();
             _instance = new Instance();
@@ -137,7 +163,11 @@ namespace Automatonymous.Tests
         }
 
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_not_call_for_one_other_event()
+#else
         public async void Should_not_call_for_one_other_event()
+#endif
         {
             _machine = new TestStateMachine();
             _instance = new Instance();

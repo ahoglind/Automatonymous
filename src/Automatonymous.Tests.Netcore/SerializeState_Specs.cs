@@ -14,13 +14,19 @@ namespace Automatonymous.Tests
 {
     using System;
     using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+  using System.Threading.Tasks;
+#endif
 
-
-    [TestFixture]
+  [TestFixture]
     public class Serializing_a_state_instance
     {
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_properly_handle_the_state_property()
+#else
         public async void Should_properly_handle_the_state_property()
+#endif
         {
             var instance = new Instance();
             var machine = new InstanceStateMachine();

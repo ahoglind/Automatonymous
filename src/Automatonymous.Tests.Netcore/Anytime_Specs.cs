@@ -12,15 +12,21 @@
 // specific language governing permissions and limitations under the License.
 namespace Automatonymous.Tests
 {
-    using NUnit.Framework;
+  using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+  using System.Threading.Tasks;
+#endif
 
-
-    [TestFixture]
+  [TestFixture]
     public class Anytime_events
     {
         [Test]
+#if NETSTANDARD || NETCORE
+        public async Task Should_be_called_regardless_of_state()
+#else
         public async void Should_be_called_regardless_of_state()
-        {
+#endif
+      {
             var instance = new Instance();
 
             await _machine.RaiseEvent(instance, x => x.Init);
@@ -31,7 +37,12 @@ namespace Automatonymous.Tests
         }
 
         [Test]
+#if NETSTANDARD || NETCORE
+        public async Task Should_have_value_of_event_data()
+#else
+
         public async void Should_have_value_of_event_data()
+#endif
         {
             var instance = new Instance();
 
@@ -46,11 +57,25 @@ namespace Automatonymous.Tests
         }
 
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_not_be_handled_on_initial()
+#else
         public void Should_not_be_handled_on_initial()
+#endif
         {
             var instance = new Instance();
+#if NETSTANDARD || NETCORE
+      var catched = false;
+      try {
+        await _machine.RaiseEvent(instance, x => x.Hello);
+      } catch (UnhandledEventException) {
+        catched = true;
+      }
+      Assert.IsTrue(catched);
+#else
 
-            Assert.Throws<UnhandledEventException>(async () => await _machine.RaiseEvent(instance, x => x.Hello));
+      Assert.Throws<UnhandledEventException>(async () => await _machine.RaiseEvent(instance, x => x.Hello));
+#endif
 
             Assert.IsFalse(instance.HelloCalled);
             Assert.AreEqual(_machine.Initial, instance.CurrentState);

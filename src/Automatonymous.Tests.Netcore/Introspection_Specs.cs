@@ -15,9 +15,11 @@ namespace Automatonymous.Tests
     using System.Collections.Generic;
     using System.Linq;
     using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+  using System.Threading.Tasks;
+#endif
 
-
-    [TestFixture]
+  [TestFixture]
     public class Introspection_Specs
     {
         [Test]
@@ -50,7 +52,11 @@ namespace Automatonymous.Tests
         }
 
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task The_next_events_should_be_known()
+#else
         public async void The_next_events_should_be_known()
+#endif
         {
             List<Event> events = (await _machine.NextEvents(_instance)).ToList();
             Assert.AreEqual(3, events.Count);

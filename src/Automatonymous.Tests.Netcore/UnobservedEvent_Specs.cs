@@ -15,19 +15,35 @@ namespace Automatonymous.Tests
     using System.Linq;
     using System.Threading.Tasks;
     using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+  using System.Threading.Tasks;
+#endif
 
-
-    [TestFixture]
+  [TestFixture]
     public class Raising_an_unhandled_event_in_a_state
     {
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_throw_an_exception_when_event_is_not_allowed_in_current_state()
+#else
         public async void Should_throw_an_exception_when_event_is_not_allowed_in_current_state()
+#endif
         {
             var instance = new Instance();
 
             await _machine.RaiseEvent(instance, x => x.Start);
 
+      #if NETSTANDARD || NETCORE
+      var catched = false;
+      try {
+        await _machine.RaiseEvent(instance, x => x.Start);
+      } catch (UnhandledEventException) {
+        catched = true;
+      }
+      Assert.IsTrue(catched);
+#else
             Assert.Throws<UnhandledEventException>(async () => await _machine.RaiseEvent(instance, x => x.Start));
+#endif
         }
 
         TestStateMachine _machine;
@@ -66,13 +82,28 @@ namespace Automatonymous.Tests
     public class Raising_an_ignored_event_that_is_not_filtered
     {
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_throw_an_exception_when_event_is_not_allowed_in_current_state()
+#else
         public async void Should_throw_an_exception_when_event_is_not_allowed_in_current_state()
+#endif
         {
             var instance = new Instance();
 
             await _machine.RaiseEvent(instance, x => x.Start);
 
+#if NETSTANDARD || NETCORE
+      var catched = false;
+      try {
+        await _machine.RaiseEvent(instance, x => x.Charge, new A { Volts = 12 });
+      } catch (UnhandledEventException) {
+        catched = true;
+      }
+      Assert.IsTrue(catched);
+#else
+
             Assert.Throws<UnhandledEventException>(async () => await _machine.RaiseEvent(instance, x => x.Charge, new A { Volts = 12 }));
+#endif
         }
 
         TestStateMachine _machine;
@@ -208,7 +239,11 @@ namespace Automatonymous.Tests
     public class Raising_an_unhandled_event_when_the_state_machine_ignores_all_unhandled_events
     {
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_silenty_ignore_the_invalid_event()
+#else
         public async void Should_silenty_ignore_the_invalid_event()
+#endif
         {
             var instance = new Instance();
 

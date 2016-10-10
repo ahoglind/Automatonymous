@@ -15,9 +15,11 @@ namespace Automatonymous.Tests
     using System;
     using System.Threading.Tasks;
     using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+  using System.Threading.Tasks;
+#endif
 
-
-    [TestFixture]
+  [TestFixture]
     public class Using_an_asynchronous_activity
     {
         class TestInstance
@@ -75,7 +77,11 @@ namespace Automatonymous.Tests
 
 
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_capture_the_value()
+#else
         public async void Should_capture_the_value()
+#endif
         {
             var claim = new TestInstance();
             var machine = new TestStateMachine();

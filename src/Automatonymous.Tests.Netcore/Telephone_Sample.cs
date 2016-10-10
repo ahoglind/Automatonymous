@@ -19,13 +19,19 @@ namespace Automatonymous.Tests
         using System.Threading.Tasks;
         using Graphing;
         using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+    using System.Threading.Tasks;
+#endif
 
-
-        [TestFixture]
+    [TestFixture]
         public class A_simple_phone_call
         {
             [Test]
+#if NETSTANDARD || NETCORE
+      public async Task Should_be_short_and_sweet()
+#else
             public async void Should_be_short_and_sweet()
+#endif
             {
                 var phone = new PrincessModelTelephone();
                 await _machine.RaiseEvent(phone, _machine.ServiceEstablished, new PhoneServiceEstablished {Digits = "555-1212"});
@@ -71,7 +77,11 @@ namespace Automatonymous.Tests
         public class A_short_time_on_hold
         {
             [Test]
+#if NETSTANDARD || NETCORE
+      public async Task Should_be_short_and_sweet()
+#else
             public async void Should_be_short_and_sweet()
+#endif
             {
                 var phone = new PrincessModelTelephone();
                 await _machine.RaiseEvent(phone, _machine.ServiceEstablished, new PhoneServiceEstablished {Digits = "555-1212"});
@@ -102,7 +112,11 @@ namespace Automatonymous.Tests
         public class An_extended_time_on_hold
         {
             [Test]
+#if NETSTANDARD || NETCORE
+      public async Task Should_end__badly()
+#else
             public async void Should_end__badly()
+#endif
             {
                 var phone = new PrincessModelTelephone();
                 await _machine.RaiseEvent(phone, _machine.ServiceEstablished, new PhoneServiceEstablished {Digits = "555-1212"});

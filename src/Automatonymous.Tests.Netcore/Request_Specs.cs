@@ -20,13 +20,19 @@ namespace Automatonymous.Tests
         using System.Threading.Tasks;
         using Binders;
         using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+    using System.Threading.Tasks;
+#endif
 
-
-        [TestFixture]
+    [TestFixture]
         public class Using_a_request_in_a_state_machine
         {
             [Test]
+#if NETSTANDARD || NETCORE
+      public async Task Should_property_initialize()
+#else
             public async void Should_property_initialize()
+#endif
             {
                 var machine = new TestStateMachine();
                 var instance = new TestState();

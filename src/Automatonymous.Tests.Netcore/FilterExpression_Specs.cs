@@ -13,13 +13,19 @@
 namespace Automatonymous.Tests
 {
     using NUnit.Framework;
+#if NETSTANDARD || NETCORE
+  using System.Threading.Tasks;
+#endif
 
-
-    [TestFixture]
+  [TestFixture]
     public class When_specifying_a_conditional_event_activity
     {
         [Test]
+#if NETSTANDARD || NETCORE
+    public async Task Should_transition_to_the_proper_state()
+#else
         public async void Should_transition_to_the_proper_state()
+#endif
         {
             var instance = new Instance();
             var machine = new InstanceStateMachine();
