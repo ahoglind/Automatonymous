@@ -50,7 +50,7 @@ namespace Automatonymous.Tests
             }
         }
 
-
+#if !NETSTANDARD && !NETCORE
         [TestFixture]
         public class Visualize
         {
@@ -65,7 +65,7 @@ namespace Automatonymous.Tests
                 Console.WriteLine(dotFile);
             }
         }
-
+#endif
 
         [TestFixture]
         public class A_short_time_on_hold
