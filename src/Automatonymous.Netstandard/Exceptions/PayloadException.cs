@@ -1,13 +1,13 @@
 namespace Automatonymous
 {
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
   using Newtonsoft.Json;
 #endif
   using System;
   using System.Runtime.Serialization;
 
 
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
   [JsonObject(MemberSerialization.OptIn)]
 #else
   [Serializable]
@@ -28,7 +28,7 @@ namespace Automatonymous
             : base(message, innerException)
         {
         }
-#if !NETSTANDARD
+#if !NETSTANDARD && !NETCORE
         protected PayloadException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {

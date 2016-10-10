@@ -17,7 +17,7 @@ namespace Automatonymous.Graphing
     using System.Linq;
     using Activities;
     using Events;
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
   using System.Reflection;
 #endif
 
@@ -125,13 +125,13 @@ namespace Automatonymous.Graphing
                 next(activity);
                 return;
             }
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
             Type activityType = activity.GetType();
             Type compensateType = activity.GetType().GetTypeInfo().ContainsGenericParameters && activityType.IsGenericParameter.GetType() == typeof(CatchFaultActivity<,>)
                 ? activityType.GetTypeInfo().GenericTypeParameters.Skip(1).First() != null ? activityType.GetTypeInfo().GenericTypeParameters.Skip(1).First().GetType() : null
                  : null;
 #else
-            Type activityType = activity.GetType();
+      Type activityType = activity.GetType();
             Type compensateType = activityType.IsGenericType && activityType.GetGenericTypeDefinition() == typeof(CatchFaultActivity<,>)
                 ? activityType.GetGenericArguments().Skip(1).First()
                 : null;
@@ -226,7 +226,7 @@ namespace Automatonymous.Graphing
 
         static Vertex CreateEventVertex(Event @event)
         {
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
           //TODO: Make sure this is correct behavior, same as for .Net
           Type targetType = @event
               .GetType()
@@ -238,7 +238,7 @@ namespace Automatonymous.Graphing
               .Single();
 
 #else
-             Type targetType = @event
+      Type targetType = @event
                 .GetType()
                 .GetInterfaces()
                 .Where(x => x.IsGenericType)

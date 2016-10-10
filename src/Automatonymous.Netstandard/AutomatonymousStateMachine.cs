@@ -297,7 +297,7 @@ namespace Automatonymous
                 eventProperty.SetValue(propertyValue, @event);
             else
             {
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
                var objectProperty = propertyValue.GetType().GetTypeInfo().GetProperty(eventProperty.Name, typeof(Event<T>));
 #else
                var objectProperty = propertyValue.GetType().GetProperty(eventProperty.Name, typeof(Event<T>));
@@ -497,7 +497,7 @@ namespace Automatonymous
                 stateProperty.SetValue(propertyValue, state);
             else
             {
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
               var objectProperty = propertyValue.GetType().GetTypeInfo().GetProperty(stateProperty.Name, typeof(State));
 #else
               var objectProperty = propertyValue.GetType().GetProperty(stateProperty.Name, typeof(State));
@@ -515,7 +515,7 @@ namespace Automatonymous
         {
             if (stateProperty.CanRead)
                 return stateProperty.GetValue(propertyValue) as StateMachineState<TInstance>;
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
             var objectProperty = propertyValue.GetType().GetTypeInfo().GetProperty(stateProperty.Name, typeof(State));
 #else
             var objectProperty = propertyValue.GetType().GetProperty(stateProperty.Name, typeof(State));
@@ -1021,7 +1021,7 @@ namespace Automatonymous
 
             foreach (PropertyInfo propertyInfo in properties)
             {
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
                 if (propertyInfo.PropertyType.GenericTypeArguments.Length > 0)
 #else
                 if (propertyInfo.PropertyType.IsGenericType)
@@ -1029,7 +1029,7 @@ namespace Automatonymous
                 {
                     if (propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(Event<>))
                     {
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
                         Type declarationType = typeof(DataEventRegistration<,>).MakeGenericType(typeof(TInstance), machineType,
                            propertyInfo.PropertyType.GenericTypeArguments.First());
 #else

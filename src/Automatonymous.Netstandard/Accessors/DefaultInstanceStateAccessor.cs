@@ -56,7 +56,7 @@ namespace Automatonymous.Accessors
         StateAccessor<TInstance> CreateDefaultAccessor()
         {
 
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
             List<PropertyInfo> states = typeof(TInstance)
                 .GetTypeInfo()
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)

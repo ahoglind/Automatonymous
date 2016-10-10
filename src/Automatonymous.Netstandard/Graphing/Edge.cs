@@ -12,13 +12,13 @@
 // specific language governing permissions and limitations under the License.
 namespace Automatonymous.Graphing
 {
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
   using Newtonsoft.Json;
 #endif
   using System;
 
 
-#if NETSTANDARD
+#if NETSTANDARD || NETCORE
   [JsonObject(MemberSerialization.OptIn)]
 #else
   [Serializable]
